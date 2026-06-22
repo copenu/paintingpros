@@ -1,1 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True Painting Co. | Professional Interior & Exterior Painters</title>
+  <meta name="description" content="Professional residential and commercial painting with fast estimates, clean crews, and premium finishes. Book a painting estimate today.">
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #637282;
+      --line: #dce5ed;
+      --soft: #f5f8fb;
+      --white: #ffffff;
+      --navy: #12324a;
+      --teal: #1f8a83;
+      --gold: #d9a441;
+      --coral: #c95f45;
+      --shadow: 0 24px 70px rgba(18, 50, 74, 0.16);
+      --radius: 8px;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+    }
+
+    .topbar-inner,
+    .nav,
+    .section-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar-inner {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.94);
+      border-bottom: 1px solid rgba(220,229,237,0.85);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--teal), var(--navy));
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 8px;
+      border: 0;
+      color: var(--white);
+      background: var(--coral);
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(201, 95, 69, 0.23);
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: var(--white);
+      box-shadow: none;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(18,50,74,0.98), rgba(31,138,131,0.92));
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(115deg, rgba(18,50,74,0.95) 0%, rgba(18,50,74,0.82) 42%, rgba(18,50,74,0.2) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='760' viewBox='0 0 1200 760'%3E%3Crect width='1200' height='760' fill='%23e9f1f6'/%3E%3Crect x='668' y='0' width='532' height='760' fill='%23d5e4ef'/%3E%3Crect x='735' y='112' width='305' height='248' rx='8' fill='%23ffffff'/%3E%3Crect x='760' y='136' width='255' height='198' rx='6' fill='%2312324a' opacity='.86'/%3E%3Crect x='782' y='158' width='210' height='154' rx='4' fill='%23f5f8fb'/%3E%3Cpath d='M846 314h100l-13 56h-74z' fill='%23b78f52'/%3E%3Cpath d='M878 370h31v210h-31z' fill='%238c6b3b'/%3E%3Crect x='804' y='560' width='180' height='20' rx='10' fill='%23c95f45'/%3E%3Ccircle cx='1016' cy='558' r='34' fill='%231f8a83'/%3E%3Cpath d='M1002 559l10 12 24-29' stroke='%23fff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Crect x='635' y='424' width='520' height='220' rx='12' fill='%23ffffff' opacity='.42'/%3E%3C/svg%3E") center right / cover no-repeat;
+      opacity: 0.92;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 660px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) 430px;
+      align-items: center;
+      gap: 54px;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #f4d08a;
+      font-size: 14px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: #f4d08a;
+    }
+
+    h1 {
+      max-width: 660px;
+      margin: 0;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin: 24px 0 32px;
+      color: rgba(255,255,255,0.86);
+      font-size: 20px;
+      font-weight: 560;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 590px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .stat {
+      padding: 20px 18px 0 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      font-weight: 950;
+    }
+
+    .stat span {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .booking-card {
+      background: var(--white);
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .booking-card h2 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .booking-card p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--ink);
+      background: var(--white);
+      font: inherit;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 560;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      min-height: 236px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #e9f6f4;
+      color: var(--teal);
+      font-size: 25px;
+      font-weight: 950;
+    }
+
+    .service h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 560;
+    }
+
+    .process-band {
+      background: var(--soft);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: steps;
+    }
+
+    .step {
+      position: relative;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      counter-increment: steps;
+    }
+
+    .step::before {
+      content: counter(steps);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 950;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 560;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 330px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--navy);
+      position: relative;
+    }
+
+    .project.small {
+      min-height: 156px;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(18,50,74,0) 0%, rgba(18,50,74,0.78) 100%),
+        linear-gradient(135deg, #dfe8ee 0%, #ffffff 36%, #b8c9d6 36%, #b8c9d6 62%, #f4d08a 62%, #f4d08a 100%);
+    }
+
+    .project:nth-child(2)::before,
+    .project:nth-child(3)::before {
+      background:
+        linear-gradient(180deg, rgba(18,50,74,0) 0%, rgba(18,50,74,0.76) 100%),
+        linear-gradient(135deg, #f4efe8 0%, #f4efe8 45%, #1f8a83 45%, #1f8a83 58%, #ffffff 58%, #ffffff 100%);
+    }
+
+    .project-label {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      color: var(--white);
+    }
+
+    .project-label strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .project-label span {
+      color: rgba(255,255,255,0.76);
+      font-weight: 700;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .quote {
+      padding: 32px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .quote p {
+      margin: 0 0 18px;
+      font-size: 25px;
+      line-height: 1.35;
+      font-weight: 780;
+    }
+
+    .quote span {
+      color: rgba(255,255,255,0.74);
+      font-weight: 700;
+    }
+
+    .review-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .review-point {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-weight: 800;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      padding: 64px 0;
+    }
+
+    .cta-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      font-size: 36px;
+      letter-spacing: 0;
+    }
+
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.74);
+      font-weight: 650;
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-weight: 650;
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner,
+      .reviews,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 54px 0;
+      }
+
+      .booking-card {
+        max-width: 560px;
+      }
+
+      .services,
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner {
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 8px 0;
+        gap: 2px;
+      }
+
+      .topbar-inner span:last-child {
+        display: none;
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .brand span {
+        max-width: 168px;
+        line-height: 1.1;
+      }
+
+      .hero-copy {
+        font-size: 18px;
+        margin: 18px 0 22px;
+      }
+
+      h1 {
+        font-size: 38px;
+        line-height: 1;
+      }
+
+      .hero-inner {
+        padding: 36px 0;
+        gap: 28px;
+      }
+
+      .stats,
+      .services,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .section-inner,
+      .topbar-inner,
+      .nav,
+      .hero-inner,
+      .cta-inner,
+      .footer-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Premium residential and commercial painting</span>
+      <span>Free estimates | Licensed and insured | 24-hour response</span>
+    </div>
+  </div>
+
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#">
+        <span class="brand-mark">N</span>
+        <span>Northline Painting Co.</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#booking">Book</a>
+      </div>
+      <a class="button" href="tel:+14165550182">Call Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Clean crews. Premium finish.</div>
+          <h1>Painting that makes your property look finished, fresh, and valuable.</h1>
+          <p class="hero-copy">Interior, exterior, cabinet, and commercial painting handled by a detail-focused crew that protects your space and finishes on schedule.</p>
+          <div class="hero-actions">
+            <a class="button" href="#booking">Book Free Estimate</a>
+            <a class="button secondary" href="#work">View Recent Work</a>
+          </div>
+          <div class="stats" aria-label="Company highlights">
+            <div class="stat">
+              <strong>4.9/5</strong>
+              <span>average client rating</span>
+            </div>
+            <div class="stat">
+              <strong>580+</strong>
+              <span>rooms completed</span>
+            </div>
+            <div class="stat">
+              <strong>2-year</strong>
+              <span>workmanship warranty</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="booking-card" id="booking">
+          <h2>Book a Free Estimate</h2>
+          <p>Tell us what you need painted and we will confirm the next available appointment.</p>
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Full name" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+            <select name="service" required>
+              <option value="">What do you need painted?</option>
+              <option>Interior painting</option>
+              <option>Exterior painting</option>
+              <option>Cabinets or trim</option>
+              <option>Commercial space</option>
+            </select>
+            <textarea name="details" placeholder="Project details, timeline, or address area"></textarea>
+            <button class="button" type="submit">Request Estimate</button>
+          </div>
+          <div class="form-note">Static demo form. Connect to email, CRM, or booking software when live.</div>
+        </form>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Professional painting services for homes and businesses.</h2>
+          <p>Simple service pages, clear trust signals, and a booking form make this page feel premium without making it complicated.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="service-icon">I</div>
+            <h3>Interior Painting</h3>
+            <p>Walls, ceilings, trim, doors, feature walls, repairs, and clean finishing for living spaces, rentals, and offices.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">E</div>
+            <h3>Exterior Painting</h3>
+            <p>Siding, stucco, brick, doors, decks, fences, and weather-ready finishes that improve curb appeal.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">C</div>
+            <h3>Cabinets & Trim</h3>
+            <p>Detailed prep, smooth coatings, and premium finishing for kitchens, bathrooms, railings, and built-ins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-band">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>A simple process that builds trust fast.</h2>
+          <p>Customers understand exactly what happens next, which makes them more likely to submit the form.</p>
+        </div>
+        <div class="process">
+          <div class="step">
+            <strong>Request estimate</strong>
+            <span>Send the basics through the booking form or call directly.</span>
+          </div>
+          <div class="step">
+            <strong>Walkthrough</strong>
+            <span>We review the space, surfaces, colors, timeline, and prep.</span>
+          </div>
+          <div class="step">
+            <strong>Clear quote</strong>
+            <span>You get pricing, scope, materials, and schedule in writing.</span>
+          </div>
+          <div class="step">
+            <strong>Clean finish</strong>
+            <span>The crew protects your property and leaves the space ready.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Recent project style.</h2>
+          <p>For a live client, these blocks can use real before-and-after photos, project locations, and short proof captions.</p>
+        </div>
+        <div class="gallery">
+          <article class="project">
+            <div class="project-label">
+              <strong>Interior repaint</strong>
+              <span>Clean walls, bright trim, modern finish</span>
+            </div>
+          </article>
+          <div class="stack">
+            <article class="project small">
+              <div class="project-label">
+                <strong>Exterior refresh</strong>
+                <span>Curb appeal upgrade</span>
+              </div>
+            </article>
+            <article class="project small">
+              <div class="project-label">
+                <strong>Cabinet finish</strong>
+                <span>Premium kitchen look</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="process-band">
+      <div class="section-inner reviews">
+        <div class="quote">
+          <p>“The crew was organized, clean, and the finish made the whole house feel new again.”</p>
+          <span>Example review block for social proof</span>
+        </div>
+        <div class="review-points">
+          <div class="review-point">Detailed prep before any paint goes on the wall</div>
+          <div class="review-point">Daily cleanup so the property stays usable</div>
+          <div class="review-point">Written scope, schedule, and workmanship warranty</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready for a cleaner, sharper finish?</h2>
+          <p>Book a free estimate and get a clear plan for your painting project.</p>
+        </div>
+        <a class="button" href="#booking">Book Estimate</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Northline Painting Co. | Professional painting demo site</span>
+      <span>Interior | Exterior | Cabinets | Commercial</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector(".booking-card").addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Thanks. This static demo form can be connected to email, SMS, CRM, or a booking calendar.");
+    });
+  </script>
+</body>
+</html>
